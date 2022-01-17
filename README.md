@@ -1,24 +1,13 @@
-# README
+### API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Добавить IP-адрес к подсчету статистики
 
-Things you may want to cover:
+`curl -XPOST http://localhost:3000/api/v1/ip_availability/127.0.0.01/add`
 
-* Ruby version
+Удалить IP-адрес из подсчета статистики
 
-* System dependencies
+`curl -XDELETE http://localhost:3000/api/v1/ip_availability/127.0.0.01/remove`
 
-* Configuration
+Сообщить статистику доступности IP-адреса по ICMP
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`curl -XGET http://localhost:3000/api/v1/ip_availability/127.0.0.01/stats/1642431600-1642442400`
