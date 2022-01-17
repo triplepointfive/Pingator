@@ -19,7 +19,10 @@ describe IpAvailability::Add do
       post "/api/v1/ip_availability/#{ip_tracking_interval.ip}/add"
 
       expect(response.status).to eq(422)
-      expect(response_body).to eq error: "Already tracking #{ip_tracking_interval.ip}"
+      expect(response_body).to eq(
+        status: "error",
+        error: { ip: "Already tracking #{ip_tracking_interval.ip}" },
+      )
     end
   end
 end

@@ -119,6 +119,8 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mustermann-grape (1.0.1)
       mustermann (>= 1.0.0)
+    mutations (0.9.1)
+      activesupport
     nio4r (2.5.8)
     nokogiri (1.13.1)
       mini_portile2 (~> 2.7.0)
@@ -208,6 +210,7 @@ DEPENDENCIES
   faker
   grape
   listen (~> 3.2)
+  mutations
   pg
   pry
   puma (~> 4.1)

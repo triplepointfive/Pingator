@@ -3,6 +3,8 @@ class API < Grape::API
   format :json
   prefix :api
 
+  helpers ::Helpers::MutationResult
+
   rescue_from :all do |e|
     rack_response({ error: e.message }.to_json, 500)
   end

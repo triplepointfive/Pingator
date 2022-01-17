@@ -9,6 +9,7 @@ gem 'puma', '~> 4.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'grape'
+gem 'mutations'
 
 group :development do
   gem 'listen', '~> 3.2'

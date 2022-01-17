@@ -18,7 +18,10 @@ describe IpAvailability::Remove do
       delete '/api/v1/ip_availability/127.0.0.1/remove'
 
       expect(response.status).to eq(422)
-      expect(response_body).to eq error: 'Not tracking 127.0.0.1'
+      expect(response_body).to eq(
+        status: "error",
+        error: { ip: 'Not tracking 127.0.0.1' },
+      )
     end
 
     it 'when interval is closed' do
@@ -27,7 +30,10 @@ describe IpAvailability::Remove do
       delete "/api/v1/ip_availability/#{ip_tracking_interval.ip}/remove"
 
       expect(response.status).to eq(422)
-      expect(response_body).to eq error: "Not tracking #{ip_tracking_interval.ip}"
+      expect(response_body).to eq(
+        status: "error",
+        error: { ip: "Not tracking #{ip_tracking_interval.ip}" },
+      )
     end
   end
 end
