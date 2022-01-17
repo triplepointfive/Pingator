@@ -1,5 +1,5 @@
 describe IpAvailability::Remove do
-  describe 'DELETE /ip_availability/Remove' do
+  describe 'DELETE /ip_availability/remove' do
     it 'close interval' do
       ip_tracking_interval = create :ip_tracking_interval
 

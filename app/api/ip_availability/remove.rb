@@ -4,7 +4,7 @@ class IpAvailability::Remove < Grape::API
     requires :ip, type: String, regexp: Resolv::AddressRegex
   end
   delete '/*ip/remove' do
-    ip = params['ip']
+    ip = params[:ip]
     interval = IpTrackingInterval.open.find_by(ip: ip)
 
     return error!("Not tracking #{ip}", 422) unless interval
