@@ -1,0 +1,10 @@
+rabbitmq:
+  hosts: ["localhost"]
+  vhost: "/"
+  user: "guest"
+  password: "guest"
+
+pinger:
+  port: 7
+  timeout: 90
+  frequency: 5

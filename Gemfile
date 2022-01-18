@@ -10,6 +10,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'grape'
 gem 'mutations'
+gem 'bunny'
+gem 'concurrent-ruby'
+gem 'net-ping'
+gem 'config'
+gem 'dry-initializer'
 
 group :development do
   gem 'listen', '~> 3.2'
@@ -20,4 +25,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
   gem 'faker'
+end
+
+group :test do
+  gem 'bunny-mock'
 end

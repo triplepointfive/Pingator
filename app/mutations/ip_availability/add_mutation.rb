@@ -9,5 +9,6 @@ class IpAvailability::AddMutation < Mutations::Command
 
   def execute
     IpTrackingInterval.create!(ip: ip, since: Time.current)
+    Pinger.new.start_tracking(ip)
   end
 end
